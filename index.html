@@ -1249,6 +1249,180 @@
                 grid-template-columns: 1fr;
             }
         }
+		
+		/* Seção Fotto Gallery */
+		.fotto-gallery {
+			background: var(--dark-bg);
+			position: relative;
+		}
+
+		.fotto-gallery::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle at 30% 70%, rgba(78, 205, 196, 0.05) 0%, transparent 50%);
+		}
+
+		.fotto-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			margin-bottom: 80px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.fotto-feature {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 40px;
+		}
+
+		.feature-icon {
+			width: 60px;
+			height: 60px;
+			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: 20px;
+			flex-shrink: 0;
+			color: var(--dark-bg);
+			font-size: 1.5rem;
+		}
+
+		.feature-text h3 {
+			margin-bottom: 10px;
+			font-size: 1.3rem;
+		}
+
+		.feature-text p {
+			color: var(--text-muted);
+			margin-bottom: 0;
+		}
+
+		.fotto-preview {
+			background: var(--dark-card);
+			border-radius: 15px;
+			padding: 30px;
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		.preview-images {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 15px;
+			margin-bottom: 30px;
+		}
+
+		.preview-images img {
+			width: 100%;
+			height: 120px;
+			object-fit: cover;
+			border-radius: 8px;
+			transition: transform 0.3s ease;
+		}
+
+		.preview-images img:hover {
+			transform: scale(1.05);
+		}
+
+		.fotto-cta {
+			text-align: center;
+		}
+
+		.fotto-cta h3 {
+			margin-bottom: 15px;
+			font-size: 1.5rem;
+		}
+
+		.fotto-cta p {
+			color: var(--text-muted);
+			margin-bottom: 0;
+		}
+
+		.fotto-benefits {
+			position: relative;
+			z-index: 1;
+		}
+
+		.benefits-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 30px;
+		}
+
+		.benefit-item {
+			text-align: center;
+			padding: 30px 20px;
+			background: var(--dark-card);
+			border-radius: 10px;
+			transition: transform 0.3s ease;
+		}
+
+		.benefit-item:hover {
+			transform: translateY(-5px);
+		}
+
+		.benefit-item i {
+			font-size: 2.5rem;
+			margin-bottom: 20px;
+			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.benefit-item h4 {
+			margin-bottom: 15px;
+			font-size: 1.2rem;
+		}
+
+		.benefit-item p {
+			color: var(--text-muted);
+			margin-bottom: 0;
+			font-size: 0.95rem;
+		}
+
+		/* Responsividade para a seção Fotto */
+		@media (max-width: 992px) {
+			.fotto-content {
+				grid-template-columns: 1fr;
+				gap: 40px;
+			}
+			
+			.preview-images {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: 576px) {
+			.fotto-feature {
+				flex-direction: column;
+				text-align: center;
+			}
+			
+			.feature-icon {
+				margin-right: 0;
+				margin-bottom: 15px;
+			}
+			
+			.preview-images {
+				grid-template-columns: 1fr;
+			}
+			
+			.preview-images img {
+				height: 150px;
+			}
+			
+			.benefits-grid {
+				grid-template-columns: 1fr;
+			}
+		}
     </style>
 </head>
 <body>
@@ -1321,72 +1495,54 @@
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza1.jpg" alt="Paisagem natural - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Nascer do Sol na Montanha</h3>
-                        <p>Capturado durante expedição na Serra da Mantiqueira</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza2.jpg" alt="Floresta - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Floresta Amazônica</h3>
-                        <p>Beleza e diversidade da maior floresta tropical do mundo</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza3.jpg" alt="Cachoeira - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Cachoeira da Prata</h3>
-                        <p>Força e beleza das águas em queda livre</p>
                     </div>
                 </div>
 				
 				<div class="portfolio-item" data-category="natureza">
                     <img src="natureza4.jpg" alt="Paisagem natural - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Nascer do Sol na Montanha</h3>
-                        <p>Capturado durante expedição na Serra da Mantiqueira</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza5.jpg" alt="Floresta - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Floresta Amazônica</h3>
-                        <p>Beleza e diversidade da maior floresta tropical do mundo</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza6.png" alt="Cachoeira - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Cachoeira da Prata</h3>
-                        <p>Força e beleza das águas em queda livre</p>
                     </div>
                 </div>
 				
 				<div class="portfolio-item" data-category="natureza">
                     <img src="natureza7.jpg" alt="Paisagem natural - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Nascer do Sol na Montanha</h3>
-                        <p>Capturado durante expedição na Serra da Mantiqueira</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza8.jpg" alt="Floresta - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Floresta Amazônica</h3>
-                        <p>Beleza e diversidade da maior floresta tropical do mundo</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item" data-category="natureza">
                     <img src="natureza9.jpg" alt="Cachoeira - Fotografia de natureza Oitava Visual" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h3>Cachoeira da Prata</h3>
-                        <p>Força e beleza das águas em queda livre</p>
                     </div>
                 </div>
                 
@@ -1443,6 +1599,106 @@
             </div>
         </div>
     </section>
+	
+	<!-- Seção Galeria Fotto -->
+	<section class="fotto-gallery" id="fotto-gallery">
+		<div class="container">
+			<h2>Galeria de Fotos</h2>
+			<p class="section-subtitle" style="text-align: center; margin-bottom: 50px; color: var(--text-muted);">
+				Veja, escolha e compre suas fotos favoritas diretamente pela plataforma Fotto
+			</p>
+			
+			<div class="fotto-content">
+				<div class="fotto-info">
+					<div class="fotto-feature">
+						<div class="feature-icon">
+							<i class="fas fa-eye"></i>
+						</div>
+						<div class="feature-text">
+							<h3>Visualize Todas as Fotos</h3>
+							<p>Acesso completo à galeria com todas as imagens de eventos, parques e ações urbanas</p>
+						</div>
+					</div>
+					
+					<div class="fotto-feature">
+						<div class="feature-icon">
+							<i class="fas fa-heart"></i>
+						</div>
+						<div class="feature-text">
+							<h3>Escolha Suas Favoritas</h3>
+							<p>Selecione as fotos que mais gostou e adicione à sua lista de desejos</p>
+						</div>
+					</div>
+					
+					<div class="fotto-feature">
+						<div class="feature-icon">
+							<i class="fas fa-shopping-cart"></i>
+						</div>
+						<div class="feature-text">
+							<h3>Compre com Segurança</h3>
+							<p>Sistema seguro de pagamento e download imediato após a compra</p>
+						</div>
+					</div>
+					
+					<div class="fotto-feature">
+						<div class="feature-icon">
+							<i class="fas fa-download"></i>
+						</div>
+						<div class="feature-text">
+							<h3>Download Imediato</h3>
+							<p>Após a confirmação do pagamento, baixe suas fotos em alta resolução</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="fotto-preview">
+					<!-- 
+					<div class="preview-images">
+						<img src="fotto-preview1.jpg" alt="Preview Fotto - Fotografia Oitava Visual" loading="lazy">
+						<img src="fotto-preview2.jpg" alt="Preview Fotto - Fotografia Oitava Visual" loading="lazy">
+						<img src="fotto-preview3.jpg" alt="Preview Fotto - Fotografia Oitava Visual" loading="lazy">
+					</div>
+					-->
+					<div class="fotto-cta">
+						<h3>Acesse Minha Galeria no Fotto</h3>
+						<p>Descubra fotos únicas de eventos, parques, esportes e momentos urbanos</p>
+						<a href="https://www.fotto.com.br/jefferson.valandro" class="btn" target="_blank" style="margin-top: 20px;">
+							<i class="fas fa-external-link-alt"></i> Ver Galeria Completa no Fotto
+						</a>
+						<p class="cta-note" style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">
+							Plataforma segura • Pagamento facilitado • Downloads ilimitados
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="fotto-benefits">
+				<h3 style="text-align: center; margin-bottom: 40px;">Por que comprar no Fotto?</h3>
+				<div class="benefits-grid">
+					<div class="benefit-item">
+						<i class="fas fa-shield-alt"></i>
+						<h4>Compra Segura</h4>
+						<p>Plataforma confiável com proteção ao consumidor</p>
+					</div>
+					<div class="benefit-item">
+						<i class="fas fa-camera-retro"></i>
+						<h4>Alta Qualidade</h4>
+						<p>Fotos em alta resolução para todos os usos</p>
+					</div>
+					<div class="benefit-item">
+						<i class="fas fa-bolt"></i>
+						<h4>Download Imediato</h4>
+						<p>Receba suas fotos logo após a confirmação</p>
+					</div>
+					<div class="benefit-item">
+						<i class="fas fa-gift"></i>
+						<h4>Direitos de Uso</h4>
+						<p>Use suas fotos como quiser (consulte termos)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
